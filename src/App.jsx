@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { questions } from './data/questions.js';
 import { Question, Results, ProgressBar } from './components/index.js';
 
-
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -17,7 +16,8 @@ function App() {
       {
         questionId: questions[currentQuestion].id,
         answer,
-        isCorrect
+        isCorrect,
+        questionText: questions[currentQuestion].question
       }
     ]);
 
@@ -40,31 +40,46 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-md overflow-hidden">
-        <div className="bg-blue-600 p-4">
-          <h1 className="text-2xl font-bold text-white text-center">MCQ Quiz App</h1>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-4xl h-[90vh] bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+          <h1 className="text-3xl font-bold text-center">Knowledge Challenge</h1>
+          {!showResults && (
+            <div className="mt-2 text-center text-blue-100">
+              Question {currentQuestion + 1} of {questions.length}
+            </div>
+          )}
         </div>
         
-        {!showResults ? (
-          <div className="p-6">
-            <ProgressBar 
-              current={currentQuestion + 1} 
-              total={questions.length} 
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto p-6 md:p-8">
+          {!showResults ? (
+            <>
+              <ProgressBar 
+                current={currentQuestion + 1} 
+                total={questions.length} 
+              />
+              <Question
+                question={questions[currentQuestion]}
+                onAnswer={handleAnswer}
+              />
+            </>
+          ) : (
+            <Results 
+              score={score}
+              total={questions.length}
+              answers={selectedAnswers}
+              onRestart={restartQuiz}
             />
-            <Question
-              question={questions[currentQuestion]}
-              onAnswer={handleAnswer}
-            />
-          </div>
-        ) : (
-          <Results 
-            score={score}
-            total={questions.length}
-            answers={selectedAnswers}
-            onRestart={restartQuiz}
-          />
-        )}
+          )}
+        </div>
+        
+
+        
+        {/* Footer */}
+        <div className="bg-gray-50 p-4 border-t border-gray-200 text-center text-gray-600">
+          Test your knowledge with our interactive quiz
+        </div>
       </div>
     </div>
   );
