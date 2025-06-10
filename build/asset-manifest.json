@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/RadiantlyMcqReact/static/css/main.596a18f5.css",
+    "main.js": "/RadiantlyMcqReact/static/js/main.031d70ed.js",
+    "index.html": "/RadiantlyMcqReact/index.html",
+    "main.596a18f5.css.map": "/RadiantlyMcqReact/static/css/main.596a18f5.css.map",
+    "main.031d70ed.js.map": "/RadiantlyMcqReact/static/js/main.031d70ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.596a18f5.css",
+    "static/js/main.031d70ed.js"
+  ]
+}
