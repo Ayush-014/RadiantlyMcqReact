@@ -1,25 +1,36 @@
 export const questions = [
   {
     id: 1,
-    question: "What is the capital of France?",
-    options: ["London", "Paris", "Berlin", "Madrid"],
-    answer: "Paris"
+    question: "Where is the headquarters of Radiantly Technologies located?",
+    options: ["Mumbai", "Bangalore", "Pune", "Delhi"],
+    answer: "Bangalore"
   },
   {
     id: 2,
-    question: "Which language runs in a web browser?",
-    options: ["Java", "C", "Python", "JavaScript"],
-    answer: "JavaScript"
+    question: "Which of these is a core service offered by Radiantly?",
+    options: [
+      "Custom software development",
+      "Automotive manufacturing",
+      "Food delivery",
+      "Thermal energy production"
+    ],
+    answer: "Custom software development"
   },
   {
     id: 3,
-    question: "What does HTML stand for?",
+    question: "What is the typical internship stipend range for a ReactJS intern at Radiantly?",
+    options: ["₹1,000 – ₹2,000", "₹3,000 – ₹6,000", "₹10,000 – ₹15,000", "Unpaid"],
+    answer: "₹3,000 – ₹6,000"
+  },
+  {
+    id: 4,
+    question: "Which perk is offered to interns at Radiantly?",
     options: [
-      "Hypertext Markup Language",
-      "Hyper Transfer Markup Language",
-      "Hyperlink Text Management Language",
-      "Home Tool Markup Language"
+      "Free on‑site meals",
+      "Company‑paid vacation",
+      "Letter of recommendation",
+      "Company car"
     ],
-    answer: "Hypertext Markup Language"
+    answer: "Letter of recommendation"
   }
 ];
